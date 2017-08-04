@@ -10,11 +10,11 @@
 ```xml
 <connectionStrings>
     <add name="main"
-		connectionString="Server=server;Port=3306;Database=database;Uid=user;Pwd=pwd;Allow User Variables=True"
-		providerName="MySql.Data.MySqlClient.MySqlConnection, MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d"/>
-	<add name="mainByMssql"
-		connectionString="Server=server;Port=3306;Database=database;Uid=user;Pwd=pwd;Allow User Variables=True"
-		providerName="System.Data.SqlClient"/>
+	connectionString="Server=server;Port=3306;Database=database;Uid=user;Pwd=pwd;Allow User Variables=True"
+	providerName="MySql.Data.MySqlClient.MySqlConnection, MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d"/>
+    <add name="mainByMssql"
+	connectionString="Server=server;Port=3306;Database=database;Uid=user;Pwd=pwd;Allow User Variables=True"
+	providerName="System.Data.SqlClient"/>
 </connectionStrings>
 ```
 
@@ -57,7 +57,7 @@ List<TableOneModel> models = Commands.GetCommand("SELECT * FROM TableOne", dbNam
 // 读取多条结果集
 Tuple<int, List<TableOneModel>> tupleResult =
 	Commands.GetCommand("SELECT COUNT(*) FROM TableOne; SELECT * FROM TableOne", dbName)
-		.Read<Tuple<int, List<TableOneModel>>>();
+	.Read<Tuple<int, List<TableOneModel>>>();
 // 读取10条结果集
 Tuple<int, int, int, int, int, int, int, Tuple<int, int, int>> tenResult = GetTenResult();
 
